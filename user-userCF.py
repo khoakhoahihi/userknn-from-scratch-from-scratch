@@ -44,7 +44,7 @@ def calculate_rmse(actual_df, predicted_df):
     return rmse
 
 rating_cols = ['user_id', 'movie_id', 'rating', 'timestamp']
-df_ratings = pd.read_csv(r'C:\Users\Lenovo\PycharmProjects\NhapMon\data\ml-100k\u.data', sep = '\t', names = rating_cols)
+df_ratings = pd.read_csv('/data/ml-100k/u.data', sep = '\t', names = rating_cols)
 # doc file u.item de su dung cho viec dung association rule de giai thich
 item_cols = ['movie_id', 'title', 'release_date', 'video_release_date', 'imdb_url',
     'unknown', 'Action', 'Adventure', 'Animation', 'Childrens',
@@ -104,6 +104,7 @@ rmse_test = calculate_rmse(test_df, predicted_rating)
 print(f'RMSE Train: {rmse_train: .4f}')
 print(f'RMSE Test: {rmse_test: .4f}')
 get_top_n_recommendations(user_id = 1, n = 5)
+
 
 
 
